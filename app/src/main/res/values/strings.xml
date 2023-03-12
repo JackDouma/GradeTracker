@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Grade Tracker</string>
+    <string name="enter_class">Enter Class</string>
+    <string name="add_class">Add Class</string>
+</resources>

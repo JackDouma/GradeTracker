@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "742511812459",
+    "project_id": "gradetracker-f9b57",
+    "storage_bucket": "gradetracker-f9b57.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:742511812459:android:a9f34f181b6f67dcb6762e",
+        "android_client_info": {
+          "package_name": "com.lh1167994.gradetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "742511812459-hmunrd81a1fg0bnthfg97sd61p1kvc72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAqNO662llohmqNBDMRjnXiA1r7_7kwBwo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "742511812459-hmunrd81a1fg0bnthfg97sd61p1kvc72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
