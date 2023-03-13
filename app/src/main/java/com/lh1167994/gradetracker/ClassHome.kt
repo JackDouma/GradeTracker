@@ -1,5 +1,6 @@
 package com.lh1167994.gradetracker
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -32,7 +33,7 @@ class ClassHome : AppCompatActivity(), ClassAdapter.ClassItemListener{
                 var uID = auth.currentUser.uid
 
                 // create and send class to firestore
-                var newClass = Class(className, null, uID, ArrayList())
+                var newClass = Class(className, null, uID)
 
                 // connect
                 val db = FirebaseFirestore.getInstance().collection("classes")
@@ -49,7 +50,7 @@ class ClassHome : AppCompatActivity(), ClassAdapter.ClassItemListener{
                         // clear the text
                         binding.addClassEditText.text.clear()
 
-                        // log project
+                        // log class
                         db.get().addOnSuccessListener { collection ->
                             for (document in collection)
                             {
@@ -67,17 +68,22 @@ class ClassHome : AppCompatActivity(), ClassAdapter.ClassItemListener{
                 Toast.makeText(this, "Class name is required",Toast.LENGTH_LONG).show()
             }
 
-            //This will be used to connect the RecyclerView, adapeter and viewModel together
+            // connects recycler, adapter, and view model together
             val viewModel : ClassViewModel by viewModels()
-            viewModel.getClasses().observe(this, {
-                binding.recyclerView.adapter = ClassAdapter(this,it,this)
-            })
+            viewModel.getClasses().observe(this) {
+                binding.recyclerView.adapter = ClassAdapter(this, it, this)
+            }
 
         }
     }
 
-    override fun classSelected(selectedClass: Class) {
-        TODO("Not yet implemented")
+    override fun classSelected(selectedClass: Class)
+    {
+        var intent = Intent(this, ClassGrades::class.java)
+
+        intent.putExtra("documentID", selectedClass.className + "-"+ selectedClass.uid)
+
+        startActivity(intent)
     }
 
 }

@@ -10,12 +10,13 @@ import androidx.recyclerview.widget.RecyclerView
 class ClassAdapter(
     val context: Context,
     val classes: List<Class>,
-    val itemListener: ClassHome
+    val itemListener: ClassItemListener
 ): RecyclerView.Adapter<ClassAdapter.ClassViewHolder>() {
     /**
      * allow connection in the layout file
      */
-    inner class ClassViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    inner class ClassViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    {
         val classTextView = itemView.findViewById<TextView>(R.id.classTextView)
     }
 
@@ -23,7 +24,8 @@ class ClassAdapter(
     /**
      * connects layout file
      */
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClassViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ClassViewHolder
+    {
         val inflator = LayoutInflater.from(parent.context)
         val view = inflator.inflate(R.layout.item_class, parent, false)
         return ClassViewHolder(view)
@@ -32,13 +34,16 @@ class ClassAdapter(
     /**
      * populating data into the textview objects in the layout file
      */
-    override fun onBindViewHolder(viewHolder: ClassViewHolder, position: Int) {
+    override fun onBindViewHolder(viewHolder: ClassViewHolder, position: Int)
+    {
         val selectedClass = classes[position]
+
         with(viewHolder) {
-            classTextView.text =  selectedClass.className
+            classTextView.text = selectedClass.className
+
             itemView.setOnClickListener {
-                        itemListener.classSelected(selectedClass)
-                    }
+                itemListener.classSelected(selectedClass)
+            }
         }
     }
 
@@ -49,7 +54,8 @@ class ClassAdapter(
     /**
      * create custom interface
      */
-    interface ClassItemListener {
+    interface ClassItemListener
+    {
         fun classSelected(selectedClass: Class)
     }
 }
