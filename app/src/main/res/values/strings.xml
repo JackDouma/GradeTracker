@@ -2,4 +2,6 @@
     <string name="app_name">Grade Tracker</string>
     <string name="enter_class">Enter Class</string>
     <string name="add_class">Add Class</string>
+    <string name="to_home">To Home</string>
+    <string name="my_classes">My Classes</string>
 </resources>

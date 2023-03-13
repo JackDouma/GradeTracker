@@ -13,7 +13,8 @@ import com.google.firebase.ktx.Firebase
 import com.lh1167994.gradetracker.databinding.ActivityClassHomeBinding
 
 
-class ClassHome : AppCompatActivity(), ClassAdapter.ClassItemListener{
+class ClassHome : AppCompatActivity(), ClassAdapter.ClassItemListener
+{
     private lateinit var binding: ActivityClassHomeBinding
     private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -68,13 +69,14 @@ class ClassHome : AppCompatActivity(), ClassAdapter.ClassItemListener{
                 Toast.makeText(this, "Class name is required",Toast.LENGTH_LONG).show()
             }
 
-            // connects recycler, adapter, and view model together
-            val viewModel : ClassViewModel by viewModels()
-            viewModel.getClasses().observe(this) {
-                binding.recyclerView.adapter = ClassAdapter(this, it, this)
-            }
 
         }
+
+        // connects recycler, adapter, and view model together
+        val viewModel : ClassViewModel by viewModels()
+        viewModel.getClasses().observe(this, {
+            binding.recyclerView.adapter = ClassAdapter(this, it, this)
+        })
     }
 
     override fun classSelected(selectedClass: Class)
@@ -82,6 +84,7 @@ class ClassHome : AppCompatActivity(), ClassAdapter.ClassItemListener{
         var intent = Intent(this, ClassGrades::class.java)
 
         intent.putExtra("documentID", selectedClass.className + "-"+ selectedClass.uid)
+        intent.putExtra("className", selectedClass.className)
 
         startActivity(intent)
     }
