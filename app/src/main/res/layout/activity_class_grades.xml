@@ -34,12 +34,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/add_grade"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addGradeWeightEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/addGradeNameEditText"
@@ -51,12 +48,11 @@
         android:inputType="textPersonName"
         android:textColor="@color/chalk_green"
         android:textColorHint="@color/chalk_green"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleTextView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+
+        />
 
     <EditText
         android:id="@+id/addGradeEditText"
@@ -68,12 +64,9 @@
         android:inputType="textPersonName"
         android:textColor="@color/chalk_green"
         android:textColorHint="@color/chalk_green"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addGradeNameEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/addGradeWeightEditText"
@@ -85,12 +78,9 @@
         android:inputType="textPersonName"
         android:textColor="@color/chalk_green"
         android:textColorHint="@color/chalk_green"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addGradeEditText"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/gradeTextView"
@@ -99,12 +89,9 @@
         android:text="@string/grade"
         android:textColor="@color/white"
         android:textSize="8pt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.02"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintTop_toBottomOf="@id/addGradeButton"
+        android:layout_marginLeft="2dp"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/remainingTextView"
@@ -113,12 +100,9 @@
         android:text="@string/remaining"
         android:textColor="@color/white"
         android:textSize="8pt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.02"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintTop_toBottomOf="@id/gradeTextView"
+        android:layout_marginLeft="2dp"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/passAverageTextView"
@@ -127,12 +111,9 @@
         android:text="@string/average_to_pass"
         android:textColor="@color/white"
         android:textSize="8pt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.697"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3" />
+        app:layout_constraintTop_toBottomOf="@id/remainingTextView"
+        android:layout_marginLeft="2dp"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/honoursAverageTextView"
@@ -141,12 +122,9 @@
         android:text="@string/average_for_honours"
         android:textColor="@color/white"
         android:textSize="8pt"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.8"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35" />
+        app:layout_constraintTop_toBottomOf="@id/passAverageTextView"
+        android:layout_marginLeft="2dp"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
@@ -156,7 +134,7 @@
         app:layout_constraintBottom_toTopOf="@+id/backButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/remainingTextView" />
+        app:layout_constraintTop_toBottomOf="@id/honoursAverageTextView" />
 
     <Button
         android:id="@+id/backButton"
@@ -166,7 +144,6 @@
         android:backgroundTint="@color/red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.995" />

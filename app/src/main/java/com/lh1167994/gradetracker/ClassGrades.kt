@@ -32,8 +32,7 @@ class ClassGrades : AppCompatActivity(), GradeAdapter.GradeItemListener
         var classID = intent.getStringExtra("documentID")
         var className = intent.getStringExtra("className")
 
-        val titleTextView: TextView = findViewById(R.id.titleTextView)
-        titleTextView.text = className
+        binding.titleTextView.text = className
 
         // on add class button press
         binding.addGradeButton.setOnClickListener{
@@ -112,8 +111,9 @@ class ClassGrades : AppCompatActivity(), GradeAdapter.GradeItemListener
     override fun gradeSelected(selectedGrade: Grade) {
         TODO("Not yet implemented")
     }
+
     fun calculate()
     {
-
+        val gradeText = binding.gradeTextView.text.toString()
     }
 }
