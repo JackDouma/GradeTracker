@@ -4,4 +4,13 @@
     <string name="add_class">Add Class</string>
     <string name="to_home">To Home</string>
     <string name="my_classes">My Classes</string>
+    <string name="enter_grade_name">Enter Grade Name</string>
+    <string name="enter_grade">Enter Grade %</string>
+    <string name="enter_grade_weight">Enter Grade Weight %</string>
+    <string name="add_grade">Add Grade</string>
+    <string name="grade">Grade:</string>
+    <string name="remaining">% Remaining:</string>
+    <string name="class_name">Class Name</string>
+    <string name="average_to_pass">Average to pass:</string>
+    <string name="average_for_honours">Average for honours:</string>
 </resources>

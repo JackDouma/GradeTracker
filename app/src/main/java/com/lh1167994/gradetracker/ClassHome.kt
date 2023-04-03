@@ -11,6 +11,7 @@ import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 import com.lh1167994.gradetracker.databinding.ActivityClassHomeBinding
+import java.util.ArrayList
 
 
 class ClassHome : AppCompatActivity(), ClassAdapter.ClassItemListener
@@ -34,7 +35,7 @@ class ClassHome : AppCompatActivity(), ClassAdapter.ClassItemListener
                 var uID = auth.currentUser.uid
 
                 // create and send class to firestore
-                var newClass = Class(className, null, uID)
+                var newClass = Class(className, uID)
 
                 // connect
                 val db = FirebaseFirestore.getInstance().collection("classes")

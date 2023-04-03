@@ -1,5 +1,7 @@
 plugins {
     id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-android-extensions'
     id 'org.jetbrains.kotlin.android'
     id 'com.google.gms.google-services'
 }
@@ -12,8 +14,8 @@ android {
         applicationId "com.lh1167994.gradetracker"
         minSdk 26
         targetSdk 33
-        versionCode 1
-        versionName "1.0"
+        versionCode 2
+        versionName "1.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
