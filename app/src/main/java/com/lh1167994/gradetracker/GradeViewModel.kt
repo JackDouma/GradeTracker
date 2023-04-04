@@ -22,7 +22,6 @@ class GradeViewModel : ViewModel()
 
         val db = FirebaseFirestore.getInstance().collection("grades")
             .whereEqualTo("uid", userID)
-            .whereEqualTo("className", "Java")
             .orderBy("gradeName")
             .addSnapshotListener{ documents, exception ->
                 if (exception != null)
